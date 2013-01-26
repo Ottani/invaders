@@ -1,4 +1,4 @@
-package com.paulo.invaders;
+package com.ottani.invaders.entity;
 
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.Graphics;
@@ -51,7 +51,7 @@ public class Bases {
 		return false;
 	}
 
-	public boolean checkHit(PlayerBullet e) {
+	public boolean checkHit(Entity e) {
 		return checkHit(e.getPx(), e.getPy(), e.getW(), e.getH());
 	}
 	

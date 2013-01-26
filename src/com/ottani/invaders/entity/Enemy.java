@@ -1,7 +1,10 @@
-package com.paulo.invaders;
+package com.ottani.invaders.entity;
+
+import java.util.List;
 
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 
 public class Enemy {
@@ -59,8 +62,8 @@ public class Enemy {
 		return alive;
 	}
 	
-	public void shoot() {
-		
+	public void shoot(List<EnemyBomb> list) throws SlickException {
+		list.add(new EnemyBomb(px, py));
 	}
 	
 	

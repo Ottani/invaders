@@ -1,9 +1,14 @@
-package com.paulo.invaders;
+package com.ottani.invaders.app;
 
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
+
+import com.ottani.invaders.state.Game;
+import com.ottani.invaders.state.GameOver;
+import com.ottani.invaders.state.MainMenu;
+
 
 public class MainApp extends StateBasedGame {
 

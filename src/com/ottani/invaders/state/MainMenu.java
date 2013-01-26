@@ -1,4 +1,4 @@
-package com.paulo.invaders;
+package com.ottani.invaders.state;
 
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -9,6 +9,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
+
 
 public class MainMenu extends BasicGameState {
 	public static final int ID = 1;

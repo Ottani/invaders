@@ -1,4 +1,4 @@
-package com.paulo.invaders;
+package com.ottani.invaders.app;
 
 public final class Constants {
 	public static final int WIDTH = 800;//1920;//800;

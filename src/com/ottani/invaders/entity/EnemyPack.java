@@ -1,9 +1,14 @@
-package com.paulo.invaders;
+package com.ottani.invaders.entity;
+
+import java.util.List;
+import java.util.Random;
 
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
+
+import com.ottani.invaders.app.Constants;
 
 public class EnemyPack {
 	
@@ -19,6 +24,7 @@ public class EnemyPack {
 	private int cols;
 	private int rows;
 	private boolean goingDown;
+	private Random rnd = new Random(System.currentTimeMillis());
 	
 	public EnemyPack() throws SlickException {
 		px = 0;
@@ -44,7 +50,7 @@ public class EnemyPack {
 		calculateBox();
 	}
 	
-	public void update(float delta) {
+	public void update(float delta, List<EnemyBomb> list) throws SlickException {
 		
 		if (!goingDown) {
 			if (moveBoxX(delta)) {
@@ -67,7 +73,12 @@ public class EnemyPack {
 				if (e.isFinishedExplosion()) {
 					shouldCalc = true;
 				} else {
-					if (e.isAlive()) e.setPos(i*sx+px, j*sy+py);
+					if (e.isAlive()) {
+						e.setPos(i*sx+px, j*sy+py);
+						if (rnd.nextDouble()<0.003d) {
+							e.shoot(list);
+						}
+					}
 				}
 			}
 		}
@@ -149,7 +160,7 @@ public class EnemyPack {
 		return false;
 	}
 
-	public boolean checkHit(PlayerBullet e) {
+	public boolean checkHit(Entity e) {
 		return checkHit(e.getPx(), e.getPy(), e.getW(), e.getH());
 	}
 	

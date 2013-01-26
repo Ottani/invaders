@@ -1,4 +1,4 @@
-package com.paulo.invaders;
+package com.ottani.invaders.entity;
 
 import java.util.Random;
 
@@ -8,15 +8,14 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 
-public class PlayerBullet {
-	private float px, py, dY;
-	private static final int w=5;
-	private static final int h=15;
+public class PlayerBullet extends Entity {
+	private float dY;
 	private static SpriteSheet missileImg;
 	private Animation animation;
 	private boolean shouldRemove = false;
 	
 	public PlayerBullet(float px, float py) throws SlickException {
+		super(5, 15);
 		if (missileImg==null) {
 			missileImg = new SpriteSheet(new Image("res/missile.png"), w, h);
 		}
@@ -41,23 +40,5 @@ public class PlayerBullet {
 	public boolean isShouldRemove() {
 		return shouldRemove;
 	}
-
-	public float getPx() {
-		return px;
-	}
-
-	public float getPy() {
-		return py;
-	}
-
-	public int getW() {
-		return w;
-	}
-
-	public int getH() {
-		return h;
-	}
-	
-	
 	
 }
